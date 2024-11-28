@@ -1,0 +1,5 @@
+pytest>=7.0.0       # Testing framework
+assertpy>=1.1       # Fluent assertion library
+hypothesis>=6.0     # Property-based testing
+pytest-cov>=3.0     # Code coverage
+mypy>=0.971         # Static type checking
