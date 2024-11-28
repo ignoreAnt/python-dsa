@@ -35,8 +35,8 @@ complex_number: complex = 3 + 2j
 another_complex_number: complex = complex(3, 2)
 added_complex_number: complex = complex_number + another_complex_number
 multiplied_complex_number: complex = complex_number * another_complex_number
-print(added_complex_number)
-print(multiplied_complex_number)
+print(added_complex_number) # output: (6+4j)
+print(multiplied_complex_number) # output: (5+12j)
 
 # 6. None: Represents the absence of a value.
 
@@ -51,17 +51,17 @@ def do_nothing() -> None:
 # 7. bytes: Represents bytes (sequence of bytes).
 
 bytes_data: bytes = b"Hello, world!"
-print(bytes_data)
+print(bytes_data) # output: b'Hello, world!'
 
 # 8. bytearray: Represents mutable bytes (sequence of bytes).
 
 bytearray_data: bytearray = bytearray(b"Hello, world!")
-print(bytearray_data)
+print(bytearray_data) # output: bytearray(b'Hello, world!')
 
 # 9. memoryview: Represents a view of a memory region (sequence of bytes).
 
 memoryview_data: memoryview = memoryview(b"Hello, world!")
-print(memoryview_data)
+print(memoryview_data) # output: <memory at 0x104fa3b80>
 
 # Collection Types
 # 1. list: Represents an ordered sequence of elements.
@@ -69,39 +69,39 @@ print(memoryview_data)
 
 my_list: list[int] = [1, 2, 3]
 my_list.append(4)
-print(my_list)
+print(my_list) # output: [1, 2, 3, 4]
 
 # 2. tuple: Represents an ordered sequence of elements.
 # Immutable, Ordered collection
 
 my_tuple: tuple[int, int, int] = (1, 2, 3)
-print(my_tuple)
+print(my_tuple) # output: (1, 2, 3)
 
 # 3. set: Represents an unordered collection of unique elements.
 # Mutable, Unordered collection, Unique elements
 
 my_set: set[int] = {1, 2, 3}
-my_set.add(4)
-print(my_set)
+my_set.add(3)
+print(my_set) # output: {1, 2, 3}
 
 # 4. dict: Represents a mapping of keys to values.
 # Mutable, Unordered collection, Unique keys
 
 my_dict: dict[str, int] = {"a": 1, "b": 2, "c": 3}
 my_dict["d"] = 4
-print(my_dict)
+print(my_dict) # output: {'a': 1, 'b': 2, 'c': 3, 'd': 4}
 
 # 5. frozenset: Represents an immutable set.
 # Immutable, Unordered collection, Unique elements
 
 my_frozenset: frozenset[int] = frozenset({1, 2, 3})
-print(my_frozenset)
+print(my_frozenset) # output: frozenset({1, 2, 3})
 
 # 6. range: Represents a sequence of integers.
 # Immutable, Ordered collection
 
 my_range: range = range(5)
-print(list(my_range))
+print(list(my_range)) # output: [0, 1, 2, 3, 4]
 
 """
 Lists vs Tuples:
@@ -134,8 +134,8 @@ def add(a: int | float, b: Union[int, float]) -> int | float:
     """
     return a + b
 
-print(add(1, 2))
-print(add(1.0, 2.0))
+print(add(1, 2))        # Output: 3
+print(add(1.0, 2.0))    # Output: 3.0
 
 # 2. Any: Represents any type.(skips type checking)
 
@@ -148,11 +148,11 @@ def print_any(a: Any) -> None:
     """
     print(f"Data: {a}")
 
-print_any(1)
-print_any("Hello, world!")
-print_any([1, 2, 3])
+print_any(1)                # Output: Data: 1
+print_any("Hello, world!")  # Output: Data: Hello, world!
+print_any([1, 2, 3])        # Output: Data: [1, 2, 3]
 
-# 3. Optional: Represents an optional value. Represents a type or None(shortcut for Union[type, None]).
+# 3. Optional: Represents an optional value. Represents a type or None (shortcut for Union[type, None]).
 
 def get_user_name(user_id: int) -> str | None:
     """
@@ -168,8 +168,8 @@ def get_user_name(user_id: int) -> str | None:
         return "John Doe"
     return None
 
-get_user_name(1)
-get_user_name(-1)
+get_user_name(1)    # Output: John Doe
+get_user_name(-1)   # Output: None
 
 # 4. Literal: Represents a literal value.Defines exact values allowed for a type.
 def set_status(status: Literal["active", "inactive"]) -> str:
@@ -184,8 +184,8 @@ def set_status(status: Literal["active", "inactive"]) -> str:
     """
     return f"Status set to {status}"
 
-print(set_status("active"))
-print(set_status("inactive"))
+print(set_status("active"))     # Output: Status set to active
+print(set_status("inactive"))   # Output: Status set to inactive
 
 # 5. NewType: Creates a new type alias.
 
@@ -205,8 +205,8 @@ def get_user_name(user_id: UserId) -> str:
     """
     return f"User with {user_id}"
 
-print(get_user_name(UserId(1)))
-print(get_user_name(UserId(-1)))
+print(get_user_name(UserId(1)))     # Output: User with 1
+print(get_user_name(UserId(-1)))    # Output: User with -1
 
 # 6. TypedDict: Creates a new type alias.
 
@@ -230,4 +230,4 @@ def get_user_name(user: User) -> str:
     """
     return user["name"]
 
-print(get_user_name({"name": "John Doe", "age": 30, "email": "aakash.work.001@gmail"}))
+print(get_user_name({"name": "John Doe", "age": 30, "email": "aakash.work.001@gmail"}))  # Output: John Doe
