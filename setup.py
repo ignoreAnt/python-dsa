@@ -8,7 +8,7 @@ setup(
     long_description_content_type="text/markdown",  # Format of the README.md
     author="Aakash Bamne",                  # Replace with your name
     author_email="aakash.work.001@gmail.com",  # Replace with your email
-    url="https://github.com/yourusername/dsa-python",  # Replace with your GitHub repository URL
+    url="https://github.com/ignoreAnt/python-dsa",  # GitHub repository URL
     packages=find_packages(),           # Automatically find all packages in the project
     install_requires=[
         "pytest>=7.0.0",                # Testing framework
