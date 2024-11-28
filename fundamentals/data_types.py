@@ -103,6 +103,21 @@ print(my_frozenset)
 my_range: range = range(5)
 print(list(my_range))
 
+"""
+Lists vs Tuples:
+    Lists are faster for element access, slower for iteration.
+    Tuples are often used when the collection shouldn’t change.
+    
+Dictionaries:
+    Keys must be hashable (immutable types like str, int, or tuples of immutables).
+    Iterating over keys, values, or items is order-preserving since Python 3.7.
+    
+Sets and Frozensets:
+    Sets are efficient for membership checks (O(1) for in).
+    Frozensets are hashable, so they can be used as keys in dictionaries or elements in sets.
+
+"""
+
 # Special Types (via Typing Modules)
 # 1. Union: Combines multiple types into a single type.
 
